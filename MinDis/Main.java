@@ -1,3 +1,4 @@
+package MinDis;
 
 public class Main {
 
