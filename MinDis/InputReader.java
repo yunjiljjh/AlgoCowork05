@@ -9,7 +9,7 @@ public class InputReader {
 	private BufferedReader br;
 	
 	public int numOfNode;
-	public Node node[];
+	public Node[] node;
 
 	public InputReader(String path){
 		numOfNode = 0;
@@ -28,16 +28,19 @@ public class InputReader {
 			
 			// reads the first line
 			numOfNode = Integer.parseInt(br.readLine());
+			System.out.println("numOfNode is "+ numOfNode);
 			node = new Node[numOfNode];
-					
+			for(int i = 0 ; i< numOfNode; i++){
+				node[i] = new Node();
+			}
 
-			for(int i=0 ; i <numOfNode ; i++){
+			for( int k=0 ;k <numOfNode ; k++){
 				s = br.readLine();
 				String[] line = s.split(" ");
-				nodeNum  = Integer.parseInt(line[0]);
+				// nodeNum  = Integer.parseInt(line[0]); <- nodeNum is Node array's index + 1, anyway
 				x = Double.parseDouble(line[1]);
 				y = Double.parseDouble(line[2]);
-				node[i].set(nodeNum, x, y);		
+				node[k].set(x, y);		
 			}
 			
 		}catch(IOException e){

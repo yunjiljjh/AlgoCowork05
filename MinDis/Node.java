@@ -1,22 +1,19 @@
 package MinDis;
 
 public class Node {
-	public int nodeNum;
+	//public int nodeNum; <- used index of Node array instead. nodeNum = index + 1
 	public double x;
 	public double y;
+	
 	public Node(){
-		nodeNum =0;
 		x=-1;
 		y=-1;
-	
 	}
-	public Node(int nodeNum, double x, double y){
-		this.nodeNum = nodeNum;
+	public Node(double x, double y){
 		this.x =x;
 		this.y =y;
 	}
-	public void set(int nodeNum, double x, double y){
-		this.nodeNum = nodeNum;
+	public void set(double x, double y){
 		this.x =x;
 		this.y =y;
 	}
