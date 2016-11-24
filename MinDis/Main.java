@@ -10,15 +10,14 @@ public class Main {
 		
 		Node[] node = reader.node;
 		int numOfNode = reader.numOfNode;
-		
-//		Dynamic dy = new Dynamic(numOfNode,node);
+				
+//		Dynamic dp = new Dynamic(numOfNode,node);
 		//Backtracking bt = new Backtracking(numOfNode,node);
 		//BranchAndBound bb= new BranchAndBound(numOfNode,node);
-		//Genetic gn = new Genetic(numOfNode,node);
+		//Genetic ga = new Genetic(numOfNode,node);
 		//SimulatedAnnealing sa = new SimulatedAnnealing(numOfNode,node);
 
-//		OutputWriter wr = new OutpurWriter(dy.result, "C:\\hw56\\id.txt");
+//		OutputWriter wr = new OutpurWriter(dp.result, "C:\\hw56\\id.txt");
 		OutputWriter wr = new OutputWriter("test", path + "\\Output\\test.txt");
 	}
-
 }

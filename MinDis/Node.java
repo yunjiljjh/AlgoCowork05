@@ -17,4 +17,17 @@ public class Node {
 		this.x =x;
 		this.y =y;
 	}
+	
+/*	private int nodeID;
+	public Node(int nodeID, double x, double y){
+		this.nodeID = nodeID;
+		this.x = x;
+		this.y = y;
+	}
+	public int getID(){
+		return nodeID;
+	} */
+/*	public void printNode(){
+		System.out.println(x + " " + y);
+	}*/
 }

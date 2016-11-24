@@ -1,5 +1,5 @@
 package MinDis;
 
-public class Backtracking {
+public class Backtracking extends Distance {
 
 }

@@ -30,6 +30,7 @@ public class InputReader {
 			numOfNode = Integer.parseInt(br.readLine());
 			System.out.println("numOfNode is "+ numOfNode);
 			node = new Node[numOfNode];
+/*			
 			for(int i = 0 ; i< numOfNode; i++){
 				node[i] = new Node();
 			}
@@ -42,6 +43,20 @@ public class InputReader {
 				y = Double.parseDouble(line[2]);
 				node[k].set(x, y);		
 			}
+*/
+			int nodeID;
+			for (int i=0; i < numOfNode; i++){
+				s = br.readLine();
+				String[] line = s.split(" ");
+				nodeID = Integer.parseInt(line[0]);
+				x = Double.parseDouble(line[1]); 
+				y = Double.parseDouble(line[2]); 
+				node[nodeID-1] = new Node(x, y);
+//				node[nodeID-1] = new Node(nodeID, x, y);
+				if(i != nodeID-1){
+					System.out.println("nodeID is not in order: " + nodeID + " != " + i);
+				}
+			}				
 			
 		}catch(IOException e){
 			e.printStackTrace();

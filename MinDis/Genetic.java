@@ -1,5 +1,5 @@
 package MinDis;
 
-public class Genetic {
+public class Genetic extends Distance {
 
 }
