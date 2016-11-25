@@ -5,11 +5,17 @@ import java.util.Collections;
 
 public class Genetic extends Distance {
 	 /* GA parameters */
-    private  double mutationRate = 0.015;
+    private  double mutationRate;
     private int tournamentSize = 5;
     private boolean elitism = true;
 
-    public Genetic(){
+    public Genetic(){}
+    
+    public Genetic(int numOfNode,Node[] node){
+    	mutationRate = 1/numOfNode;
+    	fillTourManager(numOfNode, node);
+    	
+    	/**
     	Node city = new Node(60, 200);
         TourManager.addCity(city);
         Node city2 = new Node(180, 200);
@@ -19,7 +25,15 @@ public class Genetic extends Distance {
         Node city4 = new Node(140, 180);
         TourManager.addCity(city4);
         Node city5 = new Node(20, 160);
-        
+        TourManager.addCity(city5);
+        Node city6 = new Node(10, 190);
+        TourManager.addCity(city6);
+        Node city7 = new Node(500, 400);
+        TourManager.addCity(city7);
+        */
+    	
+    	
+    	
      // Initialize population
         Population pop = new Population(50, true);
         System.out.println("Initial distance: " + pop.getFittest().getDistance());
@@ -35,6 +49,13 @@ public class Genetic extends Distance {
         System.out.println("Final distance: " + pop.getFittest().getDistance());
         System.out.println("Solution:");
         System.out.println(pop.getFittest());
+    }
+    
+    public void fillTourManager(int numOfNode, Node[] node){
+    	Node tmpcity = new Node();
+    	for(int u=0 ; u < numOfNode; u++){
+            TourManager.addCity(node[u]);
+    	}
     }
     
     // Evolves a population over one generation
