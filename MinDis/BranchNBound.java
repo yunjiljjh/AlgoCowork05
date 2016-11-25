@@ -5,15 +5,28 @@ public class BranchNBound {
 	private int N =0; 
 	private int[] final_path; //stores the final path of the salesman
 	private boolean[] visited; //visited[] keeps track of the already visited nodes in a particular path
-	double final_res = Double.MAX_VALUE; // Stores the final minimum weight of shortest tour.
-	 
+	private double final_res = Double.MAX_VALUE; // Stores the final minimum weight of shortest tour.
+	private double adj[][]; 
+	
 	public BranchNBound(){
 	}
 	
-	public BranchNBound(int numOfNode, Node[][] node){
+	public BranchNBound(int numOfNode, Node[] node){
 		N = numOfNode;
 		final_path = new int[N+1]; 
 		visited = new boolean[N];
+		
+		adj = new double[N][N];
+		for (int i = 0; i < numOfNode; i++) {
+			for (int j = 0; j < numOfNode; j++) {
+				if (i == j) {
+					adj[i][j] = 0;
+				} else {
+					adj[i][j] = node[i].distanceTo(node[j]);
+					adj[j][i] = adj[i][j];
+				}
+			}
+		}
 		System.out.println("Minimum cost : " + final_res);
 		System.out.print("Path Taken : ");
 		  for (int i=0; i<=N; i++){
