@@ -16,7 +16,7 @@ public class Main {
 		long BEGIN, END; // for calculating run time
 		BEGIN = System.currentTimeMillis();
 		
-		Genetic ga = new Genetic(numOfNode,node);
+		Genetic ga = new Genetic();
       
 		END = System.currentTimeMillis();
         System.out.println("Time: " + (END - BEGIN) / 1000.0 + " sec.");

@@ -9,3 +9,6 @@
 /SimulatedAnnealing.class
 /Distance.class
 /Genetic$Candidate.class
+/Genetic$Population.class
+/Genetic$Tour.class
+/Genetic$TourManager.class
