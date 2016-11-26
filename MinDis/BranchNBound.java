@@ -27,6 +27,9 @@ public class BranchNBound {
 				}
 			}
 		}
+		
+		TSP(adj);
+		
 		System.out.println("Minimum cost : " + final_res);
 		System.out.print("Path Taken : ");
 		  for (int i=0; i<=N; i++){
@@ -47,6 +50,7 @@ public class BranchNBound {
 	    for (int k=0; k<N; k++){
 	        if (adj[i][k]<min && i != k) min = adj[i][k];
 	    }
+	   // System.out.println("min of firstmin is: "+ min);
 	    return min;
 	}
 	 
@@ -66,6 +70,7 @@ public class BranchNBound {
 	                 adj[i][j] != first)
 	            second = adj[i][j];
 	    }
+	    //System.out.println("min of secondmin is: "+ second);
 	    return second;
 	}
 	
@@ -135,7 +140,9 @@ public class BranchNBound {
 		            curr_bound = temp;
 		 
 		            // Also reset the visited array
-		            ->(visited, false, visited.length);
+		            for(int y =0; y<visited.length; y++){
+		            	visited[y] = false;
+		            }
 		            for (int j=0; j<=level-1; j++)
 		                visited[curr_path[j]] = true;
 		        }
@@ -151,8 +158,12 @@ public class BranchNBound {
 		    // second min) for all edges.
 		    // Also initialize the curr_path and visited array
 		    double curr_bound = 0;
-		    -->(curr_path, -1, curr_path.length);
-		    -->(visited, 0, curr_path.length);
+		    for (int e=0;e<curr_path.length;e++){
+		    	curr_path[e] = -1;
+		    }
+		    for (int w=0;w<visited.length;w++){
+		    	visited[w] =false;
+		    }
 		 
 		    // Compute initial bound
 		    for (int i=0; i<N; i++)
