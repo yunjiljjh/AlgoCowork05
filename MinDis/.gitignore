@@ -12,3 +12,7 @@
 /Genetic$Population.class
 /Genetic$Tour.class
 /Genetic$TourManager.class
+/SACycle.class
+/NewCycle.class
+/randomNeighbor.class
+/SANeighbor.class

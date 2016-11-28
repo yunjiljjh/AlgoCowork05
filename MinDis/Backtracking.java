@@ -58,7 +58,7 @@ public class Backtracking extends Distance {
 				}
 			}
 		}
-//		System.out.println("----------------" + currentNodeID);
+		System.out.println("----------------" + currentNodeID);
 	}
 	//generate result string from path node IDs and minimum travel length
 	String toString(Stack<Integer> s, double minDist){
@@ -70,6 +70,7 @@ public class Backtracking extends Distance {
 //		long minimumDist = Math.round(minDist);
 //		result = result + " " + "1" + "\n" + minimumDist;
 		result = result + " " + "1" + "\n" + minDist;
+//		System.out.println(result);
 		return result;
 	}
 }
